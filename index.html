@@ -14,8 +14,8 @@
   --text:#111111; --text-mid:#3a3830; --text-muted:#8a8678;
   --border:rgba(17,17,17,0.1); --border-strong:rgba(17,17,17,0.2);
   --white:#faf8f4;
-  --font-sans:'IBM Plex Sans','Noto Sans KR',sans-serif;
-  --font-cond:'IBM Plex Sans Condensed','Noto Sans KR',sans-serif;
+  --font-sans:'IBM Plex Sans','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',Arial,sans-serif;
+  --font-cond:'IBM Plex Sans Condensed','IBM Plex Sans','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -43,17 +43,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 #hero{min-height:100vh;padding:0 60px;display:flex;flex-direction:column;justify-content:center;background:var(--bg);position:relative;overflow:hidden;}
 .hero-bg-text{position:absolute;bottom:-20px;left:-10px;font-family:var(--font-cond);font-size:clamp(120px,18vw,260px);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(17,17,17,0.05);line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em;}
 .hero-left{position:relative;padding-top:100px;padding-bottom:80px;z-index:1;}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:28px;opacity:0;animation:fadeUp .6s .2s forwards;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:28px;animation:fadeUp .6s .2s both;}
 .hero-tag::before{content:'';width:24px;height:1.5px;background:var(--red);}
-.hero-name{font-family:var(--font-cond);font-size:clamp(64px,8.5vw,112px);font-weight:900;line-height:.9;letter-spacing:-.01em;color:var(--text);margin-bottom:22px;opacity:0;animation:fadeUp .6s .32s forwards;}
-.hero-copy{font-family:var(--font-cond);font-size:clamp(24px,3vw,42px);font-weight:700;color:var(--red);line-height:1.15;margin-bottom:28px;opacity:0;animation:fadeUp .6s .44s forwards;letter-spacing:.02em;}
-.hero-desc{font-size:16px;line-height:1.9;color:var(--text-muted);max-width:400px;font-weight:400;padding-left:20px;border-left:2px solid var(--red);opacity:0;animation:fadeUp .6s .56s forwards;}
+.hero-name{font-family:var(--font-cond);font-size:clamp(64px,8.5vw,112px);font-weight:900;line-height:.9;letter-spacing:-.01em;color:var(--text);margin-bottom:22px;animation:fadeUp .6s .32s both;}
+.hero-copy{font-family:var(--font-cond);font-size:clamp(24px,3vw,42px);font-weight:700;color:var(--red);line-height:1.15;margin-bottom:28px;animation:fadeUp .6s .44s both;letter-spacing:.02em;}
+.hero-desc{font-size:16px;line-height:1.9;color:var(--text-muted);max-width:400px;font-weight:400;padding-left:20px;border-left:2px solid var(--red);animation:fadeUp .6s .56s both;}
 .hero-right{display:flex;align-items:center;justify-content:center;height:100vh;padding-top:80px;position:relative;z-index:1;}
 .hero-photo-wrap{position:relative;opacity:0;animation:fadeIn .9s .7s forwards;}
 .hero-photo-box{width:300px;height:400px;overflow:hidden;position:relative;}
 .hero-photo-box img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .hero-photo-deco{position:absolute;bottom:-16px;right:-16px;width:100%;height:100%;border:1.5px solid var(--red);opacity:.2;pointer-events:none;}
-.hero-scroll{position:absolute;bottom:44px;left:60px;display:flex;align-items:center;gap:14px;font-family:var(--font-cond);font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--text-muted);font-weight:600;opacity:0;animation:fadeUp .6s 1s forwards;}
+.hero-scroll{position:absolute;bottom:44px;left:60px;display:flex;align-items:center;gap:14px;font-family:var(--font-cond);font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--text-muted);font-weight:600;animation:fadeUp .6s 1s both;}
 .hero-scroll span{width:44px;height:1.5px;background:var(--text-muted);display:block;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
@@ -64,6 +64,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 
 .sec-num{font-family:var(--font-cond);font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:10px;}
 .sec-title{font-family:var(--font-cond);font-size:clamp(36px,5vw,60px);font-weight:900;line-height:1;color:var(--text);letter-spacing:-.01em;}
+.sec-num-large{font-family:var(--font-cond);font-size:clamp(42px,5.5vw,68px);font-weight:900;line-height:1;color:var(--text);letter-spacing:-.01em;display:block;margin-bottom:0;}
+.sec-label{font-family:var(--font-cond);font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:10px;}
 .sec-bar{width:40px;height:3px;background:var(--red);margin:20px 0;}
 
 /* ABOUT */
@@ -263,8 +265,8 @@ footer{padding:32px 60px;background:var(--text);display:flex;justify-content:spa
     <div class="about-photo-deco"></div>
   </div>
   <div class="reveal">
-    <span class="sec-num">— 01 / About</span>
-    <h2 class="sec-title">소개</h2>
+    <span class="sec-label">— 01</span>
+    <h2 class="sec-num-large">About</h2>
     <div class="sec-bar"></div>
     <p class="about-role">Contents Planner · Producer</p>
     <p class="about-bio">
@@ -283,8 +285,8 @@ footer{padding:32px 60px;background:var(--text);display:flex;justify-content:spa
 <!-- CAREER -->
 <section id="career">
   <div class="reveal">
-    <span class="sec-num">— 02 / Career</span>
-    <h2 class="sec-title">경력 &amp; 학력</h2>
+    <span class="sec-label">— 02</span>
+    <h2 class="sec-num-large">Career</h2>
     <div class="sec-bar"></div>
   </div>
   <div class="career-layout">
@@ -337,8 +339,8 @@ footer{padding:32px 60px;background:var(--text);display:flex;justify-content:spa
 <!-- PROJECTS -->
 <section id="projects">
   <div class="projects-header reveal">
-    <span class="sec-num">— 03 / Project</span>
-    <h2 class="sec-title">프로젝트</h2>
+    <span class="sec-label">— 03</span>
+    <h2 class="sec-num-large">Project</h2>
     <div class="sec-bar"></div>
     <div class="project-filter">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -642,8 +644,8 @@ footer{padding:32px 60px;background:var(--text);display:flex;justify-content:spa
 <!-- AWARDS -->
 <section id="awards">
   <div class="reveal">
-    <span class="sec-num">— 04 / Awards</span>
-    <h2 class="sec-title">수상 경력</h2>
+    <span class="sec-label">— 04</span>
+    <h2 class="sec-num-large">Awards</h2>
     <div class="sec-bar"></div>
   </div>
   <div class="reveal" style="margin-top:52px;">
@@ -709,8 +711,8 @@ footer{padding:32px 60px;background:var(--text);display:flex;justify-content:spa
 <!-- SKILLS -->
 <section id="skills">
   <div class="reveal">
-    <span class="sec-num">— 05 / Skills</span>
-    <h2 class="sec-title">스킬 &amp; 언어</h2>
+    <span class="sec-label">— 05</span>
+    <h2 class="sec-num-large">Skills</h2>
     <div class="sec-bar"></div>
   </div>
   <div class="skills-inner reveal">
@@ -730,12 +732,12 @@ footer{padding:32px 60px;background:var(--text);display:flex;justify-content:spa
 <!-- CONTACT -->
 <section id="contact">
   <div class="reveal">
-    <span class="contact-eyebrow">— 06 / Contact</span>
-    <h2 class="contact-title">연락하기</h2>
+    <span class="sec-label">— 06</span>
+    <h2 class="sec-num-large">Contact</h2>
     
     <div class="contact-links">
       <a class="contact-link" href="tel:010-4581-9352"><span class="c-icon">☎</span>010-4581-9352</a>
-      <a class="contact-link" href="/cdn-cgi/l/email-protection#6b004506020202055b5f595a2b0c060a020745080406"><span class="c-icon">✉</span><span class="__cf_email__" data-cfemail="5c377231353535326c686e6d1c3b313d3530723f3331">[email&#160;protected]</span></a>
+      <a class="contact-link" href="mailto:k.miiin0421@gmail.com"><span class="c-icon">✉</span>k.miiin0421@gmail.com</a>
     </div>
   </div>
   <div class="contact-form reveal">
@@ -751,7 +753,7 @@ footer{padding:32px 60px;background:var(--text);display:flex;justify-content:spa
   <span class="footer-copy">© 2026 All rights reserved</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
@@ -761,9 +763,13 @@ document.querySelectorAll('a,button,.career-nav-item,.award-row,.project-card').
   el.addEventListener('mouseleave',()=>{cursor.classList.remove('hover');ring.classList.remove('hover');});
 });
 
-// Reveal
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:.08});
+// Reveal — trigger immediately for elements already in view
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Fallback: if page already loaded, force all visible
+if(document.readyState==='complete'){
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+}
 
 // Language toggle
 const langBtn=document.getElementById('langBtn');
@@ -857,4 +863,14 @@ thumbs.forEach(({id,vimeoId})=>{
         img.style.cssText='width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;';
         wrap.style.position='relative';
         wrap.insertBefore(img,wrap.firstChild);
-        const ph=wra
+        const ph=wrap.querySelector('.card-thumb-placeholder');
+        if(ph)ph.remove();
+      }
+    }).catch(()=>{
+      const ph=wrap.querySelector('.card-thumb-placeholder');
+      if(ph)ph.textContent='이미지 준비중';
+    });
+});
+</script>
+</body>
+</html>
