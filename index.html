@@ -14,8 +14,8 @@
   --text:#111111; --text-mid:#3a3830; --text-muted:#8a8678;
   --border:rgba(17,17,17,0.1); --border-strong:rgba(17,17,17,0.2);
   --white:#faf8f4;
-  --font-sans:'IBM Plex Sans','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',Arial,sans-serif;
-  --font-cond:'IBM Plex Sans Condensed','IBM Plex Sans','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',Arial,sans-serif;
+  --font-sans:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',Arial,sans-serif;
+  --font-cond:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -43,23 +43,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 #hero{min-height:100vh;padding:0 60px;display:flex;flex-direction:column;justify-content:center;background:var(--bg);position:relative;overflow:hidden;}
 .hero-bg-text{position:absolute;bottom:-20px;left:-10px;font-family:var(--font-cond);font-size:clamp(120px,18vw,260px);font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(17,17,17,0.05);line-height:1;pointer-events:none;user-select:none;letter-spacing:-.02em;}
 .hero-left{position:relative;padding-top:100px;padding-bottom:80px;z-index:1;}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:28px;animation:fadeUp .6s .2s both;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-cond);font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:28px;}
 .hero-tag::before{content:'';width:24px;height:1.5px;background:var(--red);}
-.hero-name{font-family:var(--font-cond);font-size:clamp(64px,8.5vw,112px);font-weight:900;line-height:.9;letter-spacing:-.01em;color:var(--text);margin-bottom:22px;animation:fadeUp .6s .32s both;}
-.hero-copy{font-family:var(--font-cond);font-size:clamp(24px,3vw,42px);font-weight:700;color:var(--red);line-height:1.15;margin-bottom:28px;animation:fadeUp .6s .44s both;letter-spacing:.02em;}
-.hero-desc{font-size:16px;line-height:1.9;color:var(--text-muted);max-width:400px;font-weight:400;padding-left:20px;border-left:2px solid var(--red);animation:fadeUp .6s .56s both;}
+.hero-name{font-family:var(--font-cond);font-size:clamp(64px,8.5vw,112px);font-weight:900;line-height:.9;letter-spacing:-.01em;color:var(--text);margin-bottom:22px;}
+.hero-copy{font-family:var(--font-cond);font-size:clamp(24px,3vw,42px);font-weight:700;color:var(--red);line-height:1.15;margin-bottom:28px;letter-spacing:.02em;}
+.hero-desc{font-size:16px;line-height:1.9;color:var(--text-muted);max-width:400px;font-weight:400;padding-left:20px;border-left:2px solid var(--red);}
 .hero-right{display:flex;align-items:center;justify-content:center;height:100vh;padding-top:80px;position:relative;z-index:1;}
-.hero-photo-wrap{position:relative;opacity:0;animation:fadeIn .9s .7s forwards;}
+.hero-photo-wrap{position:relative;}
 .hero-photo-box{width:300px;height:400px;overflow:hidden;position:relative;}
 .hero-photo-box img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .hero-photo-deco{position:absolute;bottom:-16px;right:-16px;width:100%;height:100%;border:1.5px solid var(--red);opacity:.2;pointer-events:none;}
-.hero-scroll{position:absolute;bottom:44px;left:60px;display:flex;align-items:center;gap:14px;font-family:var(--font-cond);font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--text-muted);font-weight:600;animation:fadeUp .6s 1s both;}
+.hero-scroll{position:absolute;bottom:44px;left:60px;display:flex;align-items:center;gap:14px;font-family:var(--font-cond);font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--text-muted);font-weight:600;}
 .hero-scroll span{width:44px;height:1.5px;background:var(--text-muted);display:block;}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s;}
+
+.reveal{opacity:1;transform:translateY(0);transition:opacity .7s,transform .7s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 .sec-num{font-family:var(--font-cond);font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:10px;}
